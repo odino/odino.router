@@ -12,7 +12,7 @@ router.routes.push({
 
 var route = router.resolve('/hello/world', request);
 
-console.log(route.parameters.what);
+console.log(route.parameters.what); // world
 ```
 
 ## Declaring routes
