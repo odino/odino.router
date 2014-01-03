@@ -57,7 +57,22 @@ describe('router', function(){
             } catch (err) {
                 err.message.should.eql('matched route with pattern "/hello/:name:lastname", but an empty parameter was detected (:lastname), this might mean that you mispelled one of your router, concatenating parameters (ie. /:one:two)');
             }
+        }),
+        it('should be able to match a request by host', function(){
+            var exampleRoute = {
+                pattern: '/hello',
+                host:    'example.org'
+            };
 
+            router.match(exampleRoute, { url: '/hello', headers: { host: 'example.org' }}).should.be.true;
+        }),
+        it('should be able to not match a request by host', function(){
+            var exampleRoute = {
+                pattern: '/hello',
+                host:    'example2.org'
+            };
+
+            router.match(exampleRoute, { url: '/hello', headers: { host: 'example.org' }}).should.be.false;
         })
     })
 })
