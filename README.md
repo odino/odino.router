@@ -1,4 +1,4 @@
-# odino-router
+# odino.router
 
 A very simple and lightweight HTTP router.
 
