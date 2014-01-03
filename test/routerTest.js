@@ -11,6 +11,13 @@ describe('router', function(){
             router.match(exampleRoute, { url: '/example' }).should.be.true;
             exampleRoute.resolution.should.be.eql("exact");
         }),
+        it('should not match a raw path if the url partially matches the pattern', function(){
+            var exampleRoute = {
+                pattern: '/example'
+            };
+
+            router.match(exampleRoute, { url: '/example2' }).should.be.false;
+        }),
         it('should not match if the HTTP method is not correct', function(){
             var exampleRoute = {
                 pattern: '/example',
