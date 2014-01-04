@@ -43,6 +43,28 @@ which matches the following requests:
 * `POST /example.com`
 * `PUT /example.com`
 
+## Routing by HTTP method
+
+By adding some methods, we restrict the possible matches:
+
+```
+route.methods = ["GET", "HEAD"];
+```
+
+Now our route will only match:
+
+* `GET /example.com`
+* `HEAD /example.com`
+
+## Routing by host
+
+Suppose you have an application running on multiple hosts (`api.example.org` and `example.org`), you can
+define routes which will be only matched when the request is against one of the hosts:
+
+```
+route.host = "api.example.org";
+```
+
 ## Loading routes
 
 You have 3 ways to load routes into your router, and all of them serve for a specific purpose:
@@ -75,7 +97,7 @@ console.log(router.routes) // mySecondRoutes
 
 Since you are directly overriding the route objects, this method makes sure that all the previous routes go to hell :)
 
-### Single route loading
+### Loading routes on-the-fly
 
 In the context of a web application, you might want to provide dynamic routes by adding or removing routes on-the-fly:
 you can achieve this by using the `#load()` method, which takes an object as its argument:
@@ -120,28 +142,6 @@ router.loadFromFile('./path/to/my/routes.yml');
 ```
 
 Internally, this method uses the `#load()` method after converting the YML content in a JS object.
-
-## Routing by HTTP method
-
-By adding some methods, we restrict the possible matches:
-
-```
-route.methods = ["GET", "HEAD"];
-```
-
-Now our route will only match:
-
-* `GET /example.com`
-* `HEAD /example.com`
-
-## Routing by host
-
-Suppose you have an application running on multiple hosts (`api.example.org` and `example.org`), you can
-define routes which will be only matched when the request is against one of the hosts:
-
-```
-route.host = "api.example.org";
-```
 
 ## Tests
 
