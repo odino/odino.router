@@ -1,5 +1,9 @@
 # odino.router
 
+[![NPM version](https://badge.fury.io/js/odino.router.png)](http://badge.fury.io/js/odino.router)
+[![Build Status](https://travis-ci.org/odino/odino.router.png?branch=travis-ci)](https://travis-ci.org/odino/odino.router)
+[![Dependency Status](https://gemnasium.com/odino/odino.router.png)](https://gemnasium.com/odino/odino.router)
+
 A very simple and lightweight HTTP router.
 
 ## Usage

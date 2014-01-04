@@ -7,11 +7,14 @@
     "license": "MIT",
     "dependencies": {
         "underscore": "~1.5",
-        "underscore.string": "~2.0",
+        "underscore.string": "~2",
         "js-yaml": "~3"
     },
     "devDependencies": {
         "mocha": "~1.0",
         "should": "~2.0"
+    },
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha"
     }
 }
