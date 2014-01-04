@@ -1,13 +1,14 @@
 {
     "name": "odino.router",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "description": "An HTTP router",
     "main": "./lib/router",
     "author": "odino <alessandro.nadalin@gmail.com>",
     "license": "MIT",
     "dependencies": {
         "underscore": "~1.5",
-        "underscore.string": "~2.0"
+        "underscore.string": "~2.0",
+        "js-yaml": "~3"
     },
     "devDependencies": {
         "mocha": "~1.0",
