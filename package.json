@@ -2,6 +2,19 @@
   "name": "odino.router",
   "version": "0.1.1",
   "description": "An HTTP router",
+  "homepage": "https://github.com/odino/odino.router",
+  "repository" : {
+      "type" : "git",
+      "url" : "http://github.com/odino/odino.router.git"
+  },
+  "keywords": [
+      "router",
+      "route",
+      "http",
+      "url",
+      "urls",
+      "https"
+  ],
   "main": "./lib/router",
   "author": "odino <alessandro.nadalin@gmail.com>",
   "license": "MIT",
