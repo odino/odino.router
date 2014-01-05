@@ -68,6 +68,23 @@ describe('router', function(){
             router.routes.should.be.eql({});
         })
     }),
+    describe('#generate()', function(){
+        it('should be able to generate a simple route', function(){
+            router.routes = {};
+            router.loadFromFile('./test/stub/simple_routes.yml');
+            router.generate('example').should.be.eql('/example')
+        }),
+        it('should be able to generate a route with a parameter', function(){
+            router.routes = {};
+            router.loadFromFile('./test/stub/simple_routes.yml');
+            router.generate('example_dynamic', { param: 'test' }).should.be.eql('/example/test')
+        }),
+        it('should be able to generate a route with multiple parameter', function(){
+            router.routes = {};
+            router.loadFromFile('./test/stub/simple_routes.yml');
+            router.generate('example_dynamic_multiple', { param: 'test', param2: 'test2' }).should.be.eql('/example/test/test2')
+        })
+    }),
     describe('#imatch()', function(){
         it('should match a raw path', function(){
             var exampleRoute = {

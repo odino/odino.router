@@ -21,6 +21,10 @@ router.load(routes);
 var route = router.resolve('/hello/world', request);
 
 console.log(route.parameters.what); // world
+
+var myRoute = router.generate('example', { what: 'wait' });
+
+console.log(myRoute); // '/hello/wait'
 ```
 
 ## Declaring routes
@@ -146,6 +150,19 @@ router.loadFromFile('./path/to/my/routes.yml');
 ```
 
 Internally, this method uses the `#load()` method after converting the YML content in a JS object.
+
+## Generating routes
+
+You can use the router to **generate links** and valid routes by simply calling the `generate` method, specifying which
+route you want to generate and with which parameters:
+
+```
+// suppose you have the route 'test' => /hello/:name/:lastname in your config
+
+var route = router.generate('test', { name: 'john', lastname: 'calipari' });
+
+console.log(route); // '/hello/john/calipari'
+```
 
 ## Tests
 

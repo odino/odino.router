@@ -1,0 +1,6 @@
+example:
+  pattern: "/example"
+example_dynamic:
+  pattern: "/example/:param"
+example_dynamic_multiple:
+  pattern: "/example/:param/:param2"
